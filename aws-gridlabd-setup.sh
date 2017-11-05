@@ -21,11 +21,12 @@ yum install mysql56-server -y # for Amazon linux
 if [ ! -d mysql-connector-c-6.1.9-linux-glibc2.5-x86_64 ]; then
 	wget https://dev.mysql.com/get/Downloads/Connector-C/mysql-connector-c-6.1.9-linux-glibc2.5-x86_64.tar.gz
 	tar xf mysql-connector-c-6.1.9-linux-glibc2.5-x86_64.tar.gz
-	rm mysql-connector-c-6.1.9-linux-glibc2.5-x86_64.tar.gz
+	rm -f mysql-connector-c-6.1.9-linux-glibc2.5-x86_64.tar.gz
 	cd mysql-connector-c-6.1.9-linux-glibc2.5-x86_64/
 	cp -u bin/* /usr/local/bin
 	cp -Ru include/* /usr/local/include
 	cp -Ru lib/* /usr/local/lib
+	rm -rf mysql-connector-c-6.1.9-linux-glibc2.5-x86_64
 fi
 yum install mysql-libs -y
 
